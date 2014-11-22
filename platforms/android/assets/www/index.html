@@ -25,11 +25,13 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <title>Hello World</title>
     </head>
     <body>
         <div class="app">
-            <h1>Apache Cordova</h1>
+            <h1>Rococophoto</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
@@ -37,18 +39,24 @@
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script>
-function alertDismissed() {
-    // do something
-}
-
-navigator.notification.alert(
-    'You are the winner!',  // message
-    alertDismissed,         // callback
-    'Game Over',            // title
-    'Done'                  // buttonName
-);
        
-        </script>
     </body>
+	
 </html>
+<script>
+var height=$(window).height(); 
+var width=$(window).width();
+
+ $.post("http://m.rococophoto.net/thum_profile_new.php",
+   {
+    width:width,
+    height:height
+   });
+
+
+ $.post("http://m.rococophoto.net/talent_app_new.php",
+   {
+    width:width,
+    height:height
+   });
+</script>
